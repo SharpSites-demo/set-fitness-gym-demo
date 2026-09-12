@@ -29,9 +29,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(10,11,10,.92)
 .logo{font-family:Anton,sans-serif;font-size:20px;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;display:flex;align-items:center;gap:9px}
 .logo .sq{width:16px;height:16px;background:var(--volt);display:inline-block}
 .nlinks{display:flex;gap:26px;align-items:center}
-.nlinks a{font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--mut);padding:10px 0}
+.nlinks a{font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--mut);padding:14px 0}
 .nlinks a:hover{color:var(--bone)}
-.ncta{background:var(--volt);color:var(--ink)!important;font-weight:700;padding:10px 16px!important;border-radius:3px}
+.ncta{background:var(--volt);color:var(--ink)!important;font-weight:700;padding:12px 18px!important;min-height:44px;display:inline-flex;align-items:center;border-radius:3px}
 @media(max-width:760px){.nlinks a:not(.ncta){display:none}}
 /* HERO */
 header{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding-top:110px;overflow:hidden}
@@ -55,7 +55,8 @@ header{min-height:100svh;display:flex;flex-direction:column;justify-content:flex
 .btn svg{width:18px;height:18px;flex:none}
 /* TICKER */
 .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel);overflow:hidden;padding:14px 0}
-.tk{display:flex;gap:0;width:max-content;will-change:transform}
+.tk{display:flex;gap:0;width:max-content;will-change:transform;animation:tick 28s linear infinite}
+@keyframes tick{to{transform:translateX(-50%)}}
 .tk span{font-family:Anton,sans-serif;text-transform:uppercase;font-size:18px;letter-spacing:.08em;color:var(--mut);padding:0 26px;white-space:nowrap}
 .tk span i{color:var(--volt);font-style:normal;padding-right:52px}
 /* STATS */
@@ -65,12 +66,12 @@ header{min-height:100svh;display:flex;flex-direction:column;justify-content:flex
 .st small{color:var(--mut);font-size:12px;letter-spacing:.18em;text-transform:uppercase;display:block;margin-top:8px}
 @media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
 /* PROGRAMS */
-.pgrid{display:grid;grid-template-columns:repeat(12,1-LD-DISABLED) 1fr);gap:14px;margin-top:36px}
+.pgrid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:36px}
 .pc{border:1px solid var(--line);background:var(--panel);padding:24px;position:relative;grid-column:span 4}
 .pc:nth-child(1),.pc:nth-child(6){grid-column:span 8}
 .pc .num{font-family:Anton,sans-serif;color:transparent;-webkit-text-stroke:1px var(--mut2);font-size:40px;line-height:1}
 .pc h3{font-size:24px;margin:12px 0 6px}
-.pc p{color:var(--mut);font-size:15px}
+.pc p{color:var(--mut);font-size:16px}
 .pc::after{content:"";position:absolute;top:0;right:0;width:22px;height:22px;border-top:2px solid var(--volt);border-right:2px solid var(--volt)}
 @media(max-width:760px){.pc,.pc:nth-child(1),.pc:nth-child(6){grid-column:span 12}}
 /* TRAINERS */
@@ -80,7 +81,7 @@ header{min-height:100svh;display:flex;flex-direction:column;justify-content:flex
 .tcard+.tcard{margin-top:14px}
 .tava{width:64px;height:64px;border-radius:50%;background:conic-gradient(from 200deg,var(--volt),#3a3f2e,var(--volt));display:flex;align-items:center;justify-content:center;font-family:Anton,sans-serif;font-size:22px;color:var(--ink)}
 .tcard h3{font-size:20px}
-.tcard p{color:var(--mut);font-size:14px}
+.tcard p{color:var(--mut);font-size:16px}
 .q{border-left:4px solid var(--volt);padding:6px 0 6px 20px;color:var(--bone);font-size:19px;line-height:1.5}
 .q footer{color:var(--mut2);font-size:13px;margin-top:10px;letter-spacing:.06em;text-transform:uppercase}
 /* FACILITIES */
@@ -88,7 +89,7 @@ header{min-height:100svh;display:flex;flex-direction:column;justify-content:flex
 .fc{border:1px solid var(--line);padding:22px;background:linear-gradient(180deg,var(--panel),var(--ink))}
 .fc svg{width:26px;height:26px;color:var(--volt)}
 .fc h3{font-size:18px;margin:12px 0 4px}
-.fc p{color:var(--mut);font-size:14px}
+.fc p{color:var(--mut);font-size:16px}
 @media(max-width:860px){.fac{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.fac{grid-template-columns:1fr}}
 /* MEMBERSHIP */
@@ -99,7 +100,7 @@ header{min-height:100svh;display:flex;flex-direction:column;justify-content:flex
 .sp{border:2px solid var(--ink);padding:22px;background:transparent}
 .sp b{font-family:Anton,sans-serif;font-size:34px;display:block}
 .sp h3{font-size:18px;margin:8px 0 4px}
-.sp p{font-size:14px;color:#2c2e1a}
+.sp p{font-size:16px;color:#2c2e1a}
 .mem .ph{background:rgba(10,11,10,.08);border-color:var(--ink);color:var(--ink)}
 @media(max-width:860px){.steps{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.steps{grid-template-columns:1fr}}
@@ -107,17 +108,18 @@ header{min-height:100svh;display:flex;flex-direction:column;justify-content:flex
 .rv{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
 .rc{border:1px solid var(--line);background:var(--panel);padding:24px;display:flex;flex-direction:column;gap:14px}
 .stars{color:var(--volt);letter-spacing:3px;font-size:15px}
-.rc p{color:var(--mut);font-size:15px;flex:1}
+.rc p{color:var(--mut);font-size:16px;flex:1}
 .rc b{font-size:14px}
 @media(max-width:860px){.rv{grid-template-columns:1fr}}
 /* VISIT */
 .vrow{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:36px}
 @media(max-width:860px){.vrow{grid-template-columns:1fr}}
 .hours{border:1px solid var(--line)}
-.hrow{display:flex;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--line);font-size:15px}
+.hrow{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid var(--line);font-size:16px}
 .hrow:last-child{border-bottom:0}
 .hrow span:first-child{color:var(--mut);letter-spacing:.08em;text-transform:uppercase;font-size:13px}
 .hrow.today span{color:var(--volt);font-weight:700}
+.hrow a{display:inline-block;padding:12px 0}
 .mapbox{border:2px dashed rgba(217,242,79,.5);min-height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--mut);text-align:center;padding:24px;background:var(--panel)}
 .mapbox svg{width:40px;height:40px;color:var(--volt)}
 .addr{font-size:15px;color:var(--mut);line-height:1.7}
@@ -127,13 +129,16 @@ footer{border-top:1px solid var(--line);padding:44px 0 120px;background:var(--pa
 .fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
 @media(max-width:760px){.fgrid{grid-template-columns:1fr}}
 footer h4{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--volt);margin-bottom:12px}
-footer a,footer p{color:var(--mut);font-size:14px;text-decoration:none;display:block;padding:4px 0}
+footer a,footer p{color:var(--mut);font-size:16px;text-decoration:none;display:block;padding:10px 0}
 .copy{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);color:var(--mut2);font-size:13px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 /* WA FAB */
 .wa{position:fixed;right:18px;bottom:18px;z-index:70;width:58px;height:58px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.5)}
 .wa svg{width:30px;height:30px;color:#fff}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ExerciseGym","name":"Set Fitness GYM","alternateName":"सेट फिटनेस जिम","telephone":"+919990926662","address":{"@type":"PostalAddress","streetAddress":"1, Ram Vihar, Anand Vihar","addressLocality":"New Delhi","addressRegion":"Delhi","postalCode":"110092","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":28.6576193,"longitude":77.3102486},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"06:00","closes":"22:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"13:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"220"},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Restroom"},{"@type":"LocationFeatureSpecification","name":"Cardio area"},{"@type":"LocationFeatureSpecification","name":"Calisthenics zone"},{"@type":"LocationFeatureSpecification","name":"Dedicated leg area"},{"@type":"LocationFeatureSpecification","name":"Cafe"}],"paymentAccepted":"Debit cards, NFC mobile payments","url":"https://sharpsites-demo.github.io/set-fitness-gym-demo/"}
+</script>
 </head>
 <body>
 <nav><div class="nin">
@@ -155,14 +160,14 @@ footer a,footer p{color:var(--mut);font-size:14px;text-decoration:none;display:b
       <span class="ln"><span class="vt">training floor</span></span>
     </h1>
     <div class="hrule" aria-hidden="true"></div>
-    <p class="hsub">Strength, spinning, Zumba, HIIT and yoga under one roof — with coaches who push you past your limits. Open early, open late, seven days a week.</p>
+    <p class="hsub">Strength, spinning, Zumba, HIIT and yoga under one roof — with motivating trainers and personal attention in every session. Open early, open late, seven days a week.</p>
     <div class="hctas">
       <a class="btn btn-v" href="https://wa.me/919990926662?text=Hi%20Set%20Fitness%2C%20I%27d%20like%20to%20start%20training." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.7 1.8.8 1.9c0 .1.1.3 0 .5-.3.6-.7.8-.5 1.2.7 1.2 1.6 2 2.8 2.6.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.4 0 .1 0 .8-.2 1.4Z"/></svg>WhatsApp Us</a>
       <a class="btn btn-o" href="tel:+919990926662"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>Call +91 99909 26662</a>
     </div>
   </div>
   <div class="ticker" aria-hidden="true"><div class="tk" id="tk">
-    <span>10,000 sqft area <i>●</i></span><span>4.7★ on Google <i>●</i></span><span>Open 6 AM – 10:30 PM <i>●</i></span><span>220+ happy members reviewed <i>●</i></span><span>Spinning · Zumba · HIIT · Yoga <i>●</i></span>
+    <span>10,000 sqft area <i>●</i></span><span>4.7★ on Google <i>●</i></span><span>Open 6 AM – 10:30 PM <i>●</i></span><span>220 Google reviews <i>●</i></span><span>Spinning · Zumba · HIIT · Yoga <i>●</i></span><span>10,000 sqft area <i>●</i></span><span>4.7★ on Google <i>●</i></span><span>Open 6 AM – 10:30 PM <i>●</i></span><span>220 Google reviews <i>●</i></span><span>Spinning · Zumba · HIIT · Yoga <i>●</i></span>
   </div></div>
 </header>
 
@@ -171,20 +176,20 @@ footer a,footer p{color:var(--mut);font-size:14px;text-decoration:none;display:b
     <div class="st"><b data-count="4.7" data-dec="1">0</b><small>Google rating</small></div>
     <div class="st"><b data-count="220">0</b><small>Google reviews</small></div>
     <div class="st"><b data-count="10000">0</b><small>Sqft training area</small></div>
-    <div class="st"><b data-count="16.5" data-dec="1">0</b><small>Hours open daily</small></div>
+    <div class="st"><b data-count="201">0</b><small>Five-star Google reviews</small></div>
   </div>
 </div></section>
 
 <section id="programs"><div class="wrap">
   <span class="kick">Train your way</span>
   <h2 class="h2">Every style of sweat,<br>one floor</h2>
-  <p class="lead">Seven ways to train, all included on the same 10,000 sqft floor. <span class="ph">[Add program timetable]</span></p>
+  <p class="lead">Seven ways to train under the same 10,000 sqft roof. <span class="ph">[Add program timetable]</span></p>
   <div class="pgrid">
-    <div class="pc"><span class="num">01</span><h3>Strength &amp; Weights</h3><p>Full free-weight floor with a dedicated leg area. <span class="ph">[Add equipment list]</span></p></div>
+    <div class="pc"><span class="num">01</span><h3>Strength &amp; Weights</h3><p>Strength training with a dedicated leg area. <span class="ph">[Add equipment list]</span></p></div>
     <div class="pc"><span class="num">02</span><h3>Calisthenics Zone</h3><p>A dedicated zone for bodyweight strength and skill work.</p></div>
     <div class="pc"><span class="num">03</span><h3>Spinning</h3><p>Heart-pounding instructor-led spinning classes. <span class="ph">[Add class schedule]</span></p></div>
     <div class="pc"><span class="num">04</span><h3>Zumba &amp; Dance Fitness</h3><p>Dance-based sessions that groove and sculpt.</p></div>
-    <div class="pc"><span class="num">05</span><h3>HIIT</h3><p>High-intensity intervals that torch calories fast.</p></div>
+    <div class="pc"><span class="num">05</span><h3>HIIT</h3><p>High-Intensity Interval Training (HIIT) sessions.</p></div>
     <div class="pc"><span class="num">06</span><h3>Yoga</h3><p>A sanctuary for balance, flexibility and inner peace.</p></div>
     <div class="pc"><span class="num">07</span><h3>Cardio</h3><p>A cardio area built to elevate your heart rate. <span class="ph">[Add machines count]</span></p></div>
   </div>
@@ -196,7 +201,7 @@ footer a,footer p{color:var(--mut);font-size:14px;text-decoration:none;display:b
   <div class="tr-row">
     <blockquote class="q">"My trainer, Prashant, is extremely knowledgeable, hardworking, and disciplined. He consistently motivates me and pushes me beyond my limits while ensuring proper guidance and technique."<footer>— Abhishek Singh, Google review</footer></blockquote>
     <div>
-      <div class="tcard"><span class="tava" aria-hidden="true">P</span><div><h3>Prashant <span class="ph">[Add surname]</span></h3><p>Head trainer — mentioned by name in member reviews. <span class="ph">[Add certifications]</span></p></div></div>
+      <div class="tcard"><span class="tava" aria-hidden="true">P</span><div><h3>Prashant <span class="ph">[Add surname]</span></h3><p>Trainer — mentioned by name in member reviews. <span class="ph">[Add certifications]</span></p></div></div>
       <div class="tcard"><span class="tava" aria-hidden="true">?</span><div><h3><span class="ph">[Add trainer name]</span></h3><p><span class="ph">[Add trainer specialty — strength / cardio / yoga]</span></p></div></div>
       <div class="tcard"><span class="tava" aria-hidden="true">?</span><div><h3><span class="ph">[Add trainer name]</span></h3><p><span class="ph">[Add trainer specialty — spinning / Zumba / HIIT]</span></p></div></div>
     </div>
@@ -210,21 +215,21 @@ footer a,footer p{color:var(--mut);font-size:14px;text-decoration:none;display:b
     <div class="fc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6.5 6.5h11v11h-11z"/><path d="M3 3v18M21 3v18"/></svg><h3>Dedicated leg area</h3><p>A zone reserved for the lifts everyone skips.</p></div>
     <div class="fc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><h3>Open 6 AM – 10:30 PM</h3><p>Train before work or after. Sundays 8 AM – 1 PM.</p></div>
     <div class="fc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg><h3>Refuel cafe</h3><p>Nutritious treats to reload post-session. <span class="ph">[Add cafe menu]</span></p></div>
-    <div class="fc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v4M4.9 4.9l2.9 2.9M2 12h4M4.9 19.1l2.9-2.9M12 18v4M19.1 4.9l-2.9 2.9M22 12h-4M19.1 4.9l-2.9 2.9"/></svg><h3>Entertainment zone</h3><p>A vibrant post-workout wind-down space.</p></div>
+    <div class="fc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v4M4.9 4.9l2.9 2.9M2 12h4M4.9 19.1l2.9-2.9M12 18v4M19.1 19.1l-2.9-2.9M22 12h-4M19.1 4.9l-2.9 2.9"/></svg><h3>Entertainment zone</h3><p>A vibrant post-workout wind-down space.</p></div>
     <div class="fc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><h3>Hygiene first</h3><p>"Equipment well maintained and the space is clean" — Samiya, member.</p></div>
-    <div class="fc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v18M3 12h18M5 5l14 14M19 5 5 19"/></svg><h3>Recovery corner</h3><p>Members tag our ice bath. <span class="ph">[Add recovery details]</span></p></div>
+    <div class="fc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v18M3 12h18M5 5l14 14M19 5 5 19"/></svg><h3><span class="ph">[Add facility]</span></h3><p><span class="ph">[Add more facilities — studio, sauna, physio]</span></p></div>
   </div>
 </div></section>
 
 <section id="membership" class="mem"><div class="wrap">
   <span class="kick">Membership</span>
   <h2 class="h2">How joining works</h2>
-  <p class="lead" style="color:#2c2e1a">No forms online, no runaround. One message and you're on the floor. <span class="ph">[Add membership details]</span></p>
+  <p class="lead" style="color:#2c2e1a">One message on WhatsApp or a call is all it takes to get started. <span class="ph">[Add membership details]</span></p>
   <div class="steps">
     <div class="sp"><b>1</b><h3>Message us</h3><p>WhatsApp or call +91 99909 26662.</p></div>
-    <div class="sp"><b>2</b><h3>Take the tour</h3><p>Walk the full 10,000 sqft floor before you decide.</p></div>
-    <div class="sp"><b>3</b><h3>Meet a coach</h3><p>Discuss your goal — strength, weight loss, stamina.</p></div>
-    <div class="sp"><b>4</b><h3>Start training</h3><p>First session on the floor, same day if you like.</p></div>
+    <div class="sp"><b>2</b><h3><span class="ph">[Add joining process]</span></h3><p><span class="ph">[Add what happens after a member messages]</span></p></div>
+    <div class="sp"><b>3</b><h3><span class="ph">[Add membership details]</span></h3><p><span class="ph">[Add what a new member should know]</span></p></div>
+    <div class="sp"><b>4</b><h3><span class="ph">[Add next step]</span></h3><p><span class="ph">[Add how training begins]</span></p></div>
   </div>
 </div></section>
 
@@ -283,8 +288,6 @@ document.addEventListener('DOMContentLoaded',function(){
   gsap.from('.hrule',{scaleX:0,duration:.8,ease:'power3.inOut',delay:.5});
   gsap.from('.hsub, .hctas',{y:26,autoAlpha:0,duration:.7,stagger:.15,ease:'power3.out',delay:.65});
   gsap.from('.blob',{scale:.6,autoAlpha:0,duration:1.2,stagger:.2,ease:'back.out(1.6)'});
-  gsap.to('#tk',{xPercent:-50,duration:22,ease:'none',repeat:-1});
-  gsap.to('.grid-bg',{yPercent:14,ease:'none',scrollTrigger:{trigger:'header',start:'top top',end:'bottom top',scrub:true}});
   gsap.utils.toArray('section .kick, section .h2, section .lead').forEach(function(el){
     gsap.from(el,{y:34,autoAlpha:0,duration:.7,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
   });
@@ -293,12 +296,12 @@ document.addEventListener('DOMContentLoaded',function(){
     var end=parseFloat(el.dataset.count),dec=parseInt(el.dataset.dec||'0');
     gsap.to({v:0},{v:1,duration:1.6,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 90%'},onUpdate:function(){var p=this.targets()[0].v;el.textContent=(end*p).toFixed(dec);}});
   });
-  gsap.from('.pc',{clipPath:'inset(0 0 100% 0)',y:30,autoAlpha:0,duration:.7,stagger:.09,ease:'power3.out',scrollTrigger:{trigger:'.pgrid',start:'top 82%'}});
+  gsap.from('.pc',{y:30,autoAlpha:0,duration:.7,stagger:.09,ease:'power3.out',scrollTrigger:{trigger:'.pgrid',start:'top 82%'}});
   gsap.from('.tcard',{x:-50,autoAlpha:0,duration:.7,stagger:.12,ease:'power3.out',scrollTrigger:{trigger:'.tr-row',start:'top 80%'}});
   gsap.from('.q',{x:50,autoAlpha:0,duration:.8,ease:'power3.out',scrollTrigger:{trigger:'.tr-row',start:'top 80%'}});
   gsap.from('.fc',{y:36,autoAlpha:0,duration:.6,stagger:.08,ease:'power3.out',scrollTrigger:{trigger:'.fac',start:'top 85%'}});
   gsap.from('.sp',{scale:.85,autoAlpha:0,duration:.6,stagger:.12,ease:'back.out(1.7)',scrollTrigger:{trigger:'.steps',start:'top 85%'}});
-  gsap.from('.rc',{y:44,autoAlpha:0,rotation:1.5,duration:.7,stagger:.12,ease:'power3.out',scrollTrigger:{trigger:'.rv',start:'top 85%'}});
+  gsap.from('.rc',{y:44,autoAlpha:0,duration:.7,stagger:.12,ease:'power3.out',scrollTrigger:{trigger:'.rv',start:'top 85%'}});
   gsap.from('.hrow',{x:-30,autoAlpha:0,duration:.5,stagger:.07,ease:'power2.out',scrollTrigger:{trigger:'.hours',start:'top 85%'}});
   gsap.from('.mapbox',{scale:.94,autoAlpha:0,duration:.7,ease:'power3.out',scrollTrigger:{trigger:'.mapbox',start:'top 88%'}});
 });
