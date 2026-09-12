@@ -65,7 +65,7 @@ header{min-height:100svh;display:flex;flex-direction:column;justify-content:flex
 .st small{color:var(--mut);font-size:12px;letter-spacing:.18em;text-transform:uppercase;display:block;margin-top:8px}
 @media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
 /* PROGRAMS */
-.pgrid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:36px}
+.pgrid{display:grid;grid-template-columns:repeat(12,1-LD-DISABLED) 1fr);gap:14px;margin-top:36px}
 .pc{border:1px solid var(--line);background:var(--panel);padding:24px;position:relative;grid-column:span 4}
 .pc:nth-child(1),.pc:nth-child(6){grid-column:span 8}
 .pc .num{font-family:Anton,sans-serif;color:transparent;-webkit-text-stroke:1px var(--mut2);font-size:40px;line-height:1}
@@ -134,9 +134,6 @@ footer a,footer p{color:var(--mut);font-size:14px;text-decoration:none;display:b
 .wa svg{width:30px;height:30px;color:#fff}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ExerciseGym","name":"Set Fitness GYM","alternateName":"सेट फिटनेस जिम","telephone":"+919990926662","address":{"@type":"PostalAddress","streetAddress":"1, Ram Vihar, Anand Vihar","addressLocality":"New Delhi","addressRegion":"Delhi","postalCode":"110092","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":28.6576193,"longitude":77.3102486},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"06:00","closes":"22:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"13:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"220"},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Restroom"},{"@type":"LocationFeatureSpecification","name":"Cardio area"},{"@type":"LocationFeatureSpecification","name":"Calisthenics zone"},{"@type":"LocationFeatureSpecification","name":"Dedicated leg area"},{"@type":"LocationFeatureSpecification","name":"Cafe"}],"paymentAccepted":"Debit cards, NFC mobile payments","url":"https://sharpsites-demo.github.io/set-fitness-gym-demo/"}
-</script>
 </head>
 <body>
 <nav><div class="nin">
