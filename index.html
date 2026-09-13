@@ -16,8 +16,9 @@
 <meta name="twitter:title" content="Set Fitness GYM — 10,000 sq ft Training Floor in Anand Vihar, Delhi">
 <meta name="twitter:description" content="Strength, calisthenics, cardio, spin, HIIT, Zumba and yoga under one roof in Ram Vihar, Anand Vihar. Ask about a trial on WhatsApp.">
 <meta name="theme-color" content="#0b0e0c">
+<script>document.documentElement.classList.add("js")</script>
 <style>
-:root{--ink:#0b0e0c;--lime:#d8ff3a;--paper:#f3f4ec;--steel:#98a29a;--mut:#c7cec4;--body-d:#e8ece4;--body-l:#1a201b;--mut-l:#4a544b;--cardline:#d8dccc;--accent-l:#5a6d1a;--wa:#25d366;--wa-ink:#0b1f12}
+:root{--ink:#0b0e0c;--lime:#d8ff3a;--paper:#f3f4ec;--steel:#98a29a;--mut:#c7cec4;--body-d:#e8ece4;--body-l:#1a201b;--mut-l:#4a544b;--cardline:#d8dccc;--accent-l:#5a6d1a;--wa:#25d366}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--ink);color:var(--body-d);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
@@ -37,11 +38,12 @@ img,svg{max-width:100%}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:13px 22px;border-radius:6px;font-weight:800;font-size:15px;letter-spacing:.01em;transition:transform .15s ease}
 .btn:active{transform:scale(.98)}
 .btn-lime{background:var(--lime);color:var(--ink)}
-.btn-wa{background:var(--wa);color:var(--wa-ink)}
-.btn-wa svg{width:19px;height:19px;fill:var(--wa-ink);flex:none}
+.wa-fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:70;width:56px;height:56px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.35);transition:transform .15s ease}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab:active{transform:scale(.95)}
 .btn-ghost{border:1px solid rgba(216,255,58,.55);color:var(--body-d)}
 .tel,.vrow a[href^="tel"]{white-space:nowrap}
-.btn-sm{min-height:40px;padding:9px 16px;font-size:13px}
+.btn-sm{min-height:44px;padding:9px 18px;font-size:13.5px}
 /* hero */
 .hero{position:relative;overflow:hidden;padding:0}
 .ripple-content{position:relative;width:100%;overflow:auto}
@@ -96,11 +98,12 @@ h2{font-size:clamp(30px,4.6vw,48px);line-height:1.05;letter-spacing:-.015em;marg
 /* footer */
 footer{padding:34px 0 110px;color:var(--steel);font-size:13.5px}
 footer a{color:var(--mut)}
-/* mobile bar */
-.mobilebar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;grid-template-columns:1fr 1fr;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(11,14,12,.97);border-top:1px solid rgba(216,255,58,.2)}
 @media(max-width:56.25em){.grid8{grid-template-columns:repeat(2,1fr)}.hero-in{grid-template-columns:1fr;gap:30px}.coach-grid,.visit-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}}
-@media(max-width:40em){.top-cta .tel{display:none}.mobilebar{display:grid}section{padding:56px 0}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+@media(max-width:40em){.top-cta .tel{display:none}section{padding:56px 0}}
+/* scroll-reveal: IO adds .revealed; hidden state only when JS is running */
+.js [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.js [data-reveal].revealed{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js [data-reveal]{opacity:1;transform:none;transition:none}*{animation:none!important;transition:none!important}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ExerciseGym","name":"Set Fitness GYM","telephone":"+919990926662","address":{"@type":"PostalAddress","streetAddress":"1, Ram Vihar, Anand Vihar","addressLocality":"New Delhi","addressRegion":"Delhi","postalCode":"110092","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":28.6576193,"longitude":77.3102486},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"06:00","closes":"22:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"13:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"220"}}
@@ -113,7 +116,7 @@ footer a{color:var(--mut)}
     <div class="brand">SET<span>·</span>FITNESS<span>·</span>GYM</div>
     <div class="top-cta">
       <a class="tel" href="tel:+919990926662">+91 99909 26662</a>
-      <a class="btn btn-wa btn-sm" aria-label="Chat with Set Fitness GYM on WhatsApp" href="https://wa.me/919990926662?text=Hi%20Set%20Fitness%2C%20I%27d%20like%20to%20ask%20about%20a%20trial%20session."><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa-glyph"/></svg>Ask about a trial</a>
+      <a class="btn btn-lime btn-sm" href="tel:+919990926662">Ask about a trial</a>
     </div>
   </div>
 </div>
@@ -124,7 +127,7 @@ footer a{color:var(--mut)}
       <h1>10,000 sq ft built for <em>every kind</em> of training.</h1>
       <p class="lede">Strength, calisthenics, cardio, spin, HIIT, Zumba and yoga — under one roof, with a cafe to refuel after. Open 6 AM to 10:30 PM, six days a week.</p>
       <div class="cta-row">
-        <a class="btn btn-wa" aria-label="Chat with Set Fitness GYM on WhatsApp" href="https://wa.me/919990926662?text=Hi%20Set%20Fitness%2C%20I%27d%20like%20to%20ask%20about%20a%20trial%20session."><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa-glyph"/></svg>Ask about a trial on WhatsApp</a>
+        <a class="btn btn-lime" href="tel:+919990926662">Ask about a trial</a>
         <a class="btn btn-ghost" href="#floor">See the training floor</a>
       </div>
       <div class="rating">
@@ -212,8 +215,7 @@ footer a{color:var(--mut)}
       <h2 data-reveal>Coached, not supervised.</h2>
       <p class="sub" data-reveal>Across 220 Google reviews, "trainers" is the single most-mentioned theme — members keep calling out motivating sessions, personal attention and workouts tailored to them.</p>
       <div class="cta-row" data-reveal>
-        <a class="btn btn-wa" aria-label="Chat with Set Fitness GYM on WhatsApp" href="https://wa.me/919990926662?text=Hi%20Set%20Fitness%2C%20I%27d%20like%20to%20ask%20about%20a%20trial%20session."><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa-glyph"/></svg>Ask about a trial</a>
-        <a class="btn btn-ghost" href="tel:+919990926662">Call the gym</a>
+        <a class="btn btn-lime" href="tel:+919990926662">Ask about a trial</a>
       </div>
     </div>
     <div data-reveal>
@@ -247,8 +249,7 @@ footer a{color:var(--mut)}
       </div>
       <div class="ph" style="margin-bottom:20px">[Add membership plans and trial details]</div>
       <div class="cta-row">
-        <a class="btn btn-wa" aria-label="Chat with Set Fitness GYM on WhatsApp" href="https://wa.me/919990926662?text=Hi%20Set%20Fitness%2C%20I%27d%20like%20to%20ask%20about%20a%20trial%20session."><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa-glyph"/></svg>Ask about a trial on WhatsApp</a>
-        <a class="btn btn-ghost" href="tel:+919990926662">Call +91 99909 26662</a>
+        <a class="btn btn-lime" href="tel:+919990926662">Ask about a trial</a>
       </div>
     </div>
   </div>
@@ -264,7 +265,6 @@ footer a{color:var(--mut)}
         <div class="vrow"><b>Address</b><span>1, Ram Vihar, Anand Vihar, New Delhi, Delhi 110092</span></div>
         <div class="vrow"><b>Hours</b><span>Mon–Sat · 6:00 AM–10:30 PM<br>Sunday · 8:00 AM–1:00 PM</span></div>
         <div class="vrow"><b>Phone</b><span><a href="tel:+919990926662">+91 99909 26662</a></span></div>
-        <div class="vrow"><b>WhatsApp</b><span><a href="https://wa.me/919990926662">Message the team</a></span></div>
       </div>
       <div class="ph mapph" data-reveal>[Add a Google Maps embed]</div>
     </div>
@@ -276,13 +276,8 @@ footer a{color:var(--mut)}
   <div class="wrap">Set Fitness GYM · 1, Ram Vihar, Anand Vihar, New Delhi 110092 · <a href="tel:+919990926662">+91 99909 26662</a></div>
 </footer>
 
-<div class="mobilebar">
-  <a class="btn btn-ghost" href="tel:+919990926662">Call the gym</a>
-  <a class="btn btn-wa" aria-label="Chat with Set Fitness GYM on WhatsApp" href="https://wa.me/919990926662?text=Hi%20Set%20Fitness%2C%20I%27d%20like%20to%20ask%20about%20a%20trial%20session."><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa-glyph"/></svg>WhatsApp</a>
-</div>
+<a class="wa-fab" aria-label="Chat on WhatsApp" href="https://wa.me/919990926662" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa-glyph"/></svg></a>
 
-<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script>
 /* Canvas UI — Ripple (WebGL vanilla build)
    Source: https://canvasui.dev/docs/components/ripple · github.com/DavidHDev/canvas-ui · MIT
@@ -549,15 +544,30 @@ function mountRipple(host, content, options){
     if (source.parentNode) source.parentNode.removeChild(source);
   }
 }
-mountRipple(document.getElementById("hero"), document.getElementById("hero-content"), {trigger:"click", interval:6, amplitude:.55, refraction:90, dispersion:.45, shine:.5, wavelength:90});
-/* GSAP entrance motion — skipped entirely for reduced-motion users */
+/* Lazy-mount: the WebGL engine compiles on the hero's first press — the natural
+   moment for a click-triggered effect. Zero GPU/main-thread work before then,
+   so page load stays clean. Skipped entirely for reduced-motion users. */
+var rippleMounted = false;
+function initRipple(){
+  if (rippleMounted) return;
+  rippleMounted = true;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  mountRipple(document.getElementById("hero"), document.getElementById("hero-content"), {trigger:"click", interval:0, amplitude:.55, refraction:90, dispersion:.45, shine:.5, wavelength:90});
+}
+document.getElementById("hero").addEventListener("pointerdown", initRipple, {once:true, passive:true});
+/* Scroll-reveal via IntersectionObserver (no external JS; reduced-motion handled in CSS) */
 window.addEventListener("DOMContentLoaded", function(){
-  if (window.gsap && window.ScrollTrigger && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray("[data-reveal]").forEach(function(el){
-      gsap.from(el, {opacity:0, y:18, duration:.7, ease:"power2.out", scrollTrigger:{trigger:el, start:"top 86%", once:true}});
-    });
+  var els = document.querySelectorAll("[data-reveal]");
+  if (!("IntersectionObserver" in window)) {
+    els.forEach ? els.forEach(function(el){ el.classList.add("revealed"); }) : null;
+    return;
   }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add("revealed"); io.unobserve(en.target); }
+    });
+  }, {rootMargin:"0px 0px -12% 0px", threshold:.08});
+  for (var i = 0; i < els.length; i++) io.observe(els[i]);
 });
 })();
 </script>
